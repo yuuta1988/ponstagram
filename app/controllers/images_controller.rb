@@ -3,14 +3,28 @@ class ImagesController < ApplicationController
   before_action :move_to_index, except: :index
 
   def index
-    @images = Image.order("created_at DESC")
+    @images = Image.includes(:user).order("created_at DESC")
   end
 
   def new
   end
 
   def create
-    Image.create(image: params[:image], text: params[:text])
+    Image.create(image: image_params[:image], text: image_params[:text], user_id: current_user.id)
+  end
+
+  def destroy
+    image = Image.find(params[:id])
+    image.destroy if image.user_id == current_user.id
+  end
+
+  def edit
+    @image = Image.find(params[:id])
+  end
+
+  def update
+    image = Image.find(params[:id])
+    image.update(image_params) if image.user_id == current_user.id
   end
 
   private

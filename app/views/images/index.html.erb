@@ -1,1 +1,7 @@
-<p>Whats up</p>
+<div class="contents row" >
+  <% @images.each do |image| %>
+    <div class="content_post" style="background-image: url(<%= image.image %>);">
+      <%= simple_format(image.text) %>
+    </div>
+  <% end %>
+</div>

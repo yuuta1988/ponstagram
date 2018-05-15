@@ -22,6 +22,11 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
   end
 
+  def show
+    @image = Image.find(params[:id])
+    @comments = @image.comments.includes(:user)
+  end
+
   def update
     image = Image.find(params[:id])
     image.update(image_params) if image.user_id == current_user.id

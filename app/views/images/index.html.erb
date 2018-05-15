@@ -1,7 +1,28 @@
 <div class="contents row" >
   <% @images.each do |image| %>
     <div class="content_post" style="background-image: url(<%= image.image %>);">
+      <% if user_signed_in? && current_user.id == image.user_id %>
+        <div class="more">
+          <span>削除編集</span>
+          <ul class="more_list">
+            <li>
+              <%= link_to '詳細', "/images/#{image.id}", method: :get %>
+            </li>
+            <li>
+              <%= link_to '編集', "/images/#{image.id}/edit", method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', "/images/#{image.id}", method: :delete %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
       <%= simple_format(image.text) %>
+      <span class="name">
+        <a href="">
+          <span>投稿者</span><%= image.user.name %>
+        </a>
+      </span>
     </div>
   <% end %>
 </div>

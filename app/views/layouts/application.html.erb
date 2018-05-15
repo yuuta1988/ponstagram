@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pomstagram</title>
+    <title>Ponstagram</title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -24,10 +24,25 @@
   <body>
     <header class="header">
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/"></a>Pomstagram</h1>
-        <div class="user_nav grid-6">
-          <a class="post" href="/images/new">投稿する</a>
-        </div>
+        <h1 class="grid-6"><a href="/"></a>Ponstagram</h1>
+        <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+            <span><%= current_user.name %>
+              <ul class="user__info">
+                <li>
+                  <a href="/users/<%= current_user.id %>">マイページ</a>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </span>
+            <a class="post" href="/images/new">投稿する</a>
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+          </div>
+        <% end %>
       </div>
     </header>
 

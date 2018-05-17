@@ -4,6 +4,12 @@ class CommentsController < ApplicationController
     redirect_to "/images/#{@comment.image.id}"
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy if comment.user_id == current_user.id
+    redirect_to "/images/#{comment.image.id}"
+  end
+
   private
   def comment_params
     params.permit(:text, :image_id)

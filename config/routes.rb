@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   root    'images#index'
   resources :images do
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
   end
   post "likes/:image_id/create" => "likes#create"
   post "likes/:image_id/destroy" => "likes#destroy"

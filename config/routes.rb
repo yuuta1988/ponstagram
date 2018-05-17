@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   post "likes/:image_id/create" => "likes#create"
   post "likes/:image_id/destroy" => "likes#destroy"
+  get "users/:id/likes" => "users#likes"
 end

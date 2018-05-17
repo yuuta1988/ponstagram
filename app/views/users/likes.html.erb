@@ -1,0 +1,11 @@
+<div class="contents row" >
+  <ul class="user-tabs">
+    <li><%= link_to("投稿一覧", "/users/#{@user.id}") %></li>
+  </ul>
+  <p>いいね一覧</p>
+  <% @likes.each do |like| %>
+    <% image = Image.find_by(id: like.image_id) %>
+    <%= link_to(image.user.name, "/users/#{image.user.id}") %>
+    <%= link_to(image.text, "/images/#{image.id}") %>
+  <% end %>
+</div>

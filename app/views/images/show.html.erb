@@ -31,6 +31,8 @@
       <% end %>
     <% end %>
 
+    <%= @likes_count %>
+
     <% if current_user %>
       <%= form_tag("/images/#{@image.id}/comments", method: :post) do %>
         <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>

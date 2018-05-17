@@ -46,6 +46,9 @@
           <p>
             <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.text %>
+            <% if user_signed_in? && current_user.id == comment.user_id %>
+              <p><%= link_to '削除する',  [@image, comment], method: :delete %></p>
+            <% end %>
           </p>
         <% end %>
       <% end %>

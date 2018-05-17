@@ -1,4 +1,7 @@
 <div class="contents row" >
+  <ul class="user-tabs">
+    <li><%= link_to("いいね!一覧", "/users/#{@user.id}/likes") %></li>
+  </ul>
   <p><%= @name %>さんの投稿一覧</p>
   <% @images.each do |image| %>
     <div class="content_post" style="background-image: url(<%= image.image %>);">

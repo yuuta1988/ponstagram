@@ -25,6 +25,7 @@ class ImagesController < ApplicationController
   def show
     @image = Image.find(params[:id])
     @comments = @image.comments.includes(:user)
+    @likes_count = Like.where(image_id: @image.id).count
   end
 
   def update

@@ -7,10 +7,12 @@ class ImagesController < ApplicationController
   end
 
   def new
+    @image = Image.new
   end
 
   def create
-    Image.create(image: image_params[:image], text: image_params[:text], user_id: current_user.id)
+    # Image.create(image: image_params[:image], text: image_params[:text], user_id: current_user.id)
+    Image.create(image_params)
   end
 
   def destroy
@@ -35,7 +37,7 @@ class ImagesController < ApplicationController
 
   private
   def image_params
-    params.permit(:image, :text)
+    params.require(:image).permit(:image, :text).merge(user_id: current_user.id)
   end
 
   def move_to_index

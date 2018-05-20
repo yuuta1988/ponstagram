@@ -24,27 +24,35 @@
 
   <body>
     <header class="header">
-      <div class="header__bar row">
-        <%= link_to "Ponstagram", root_path, class: 'grid-6'%>
-        <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-            <span><%= current_user.name %>
-              <ul class="user__info">
-                <li>
-                  <a href="/users/<%= current_user.id %>">マイページ</a>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                </li>
-              </ul>
-            </span>
-            <a class="post" href="/images/new">投稿する</a>
+      <div class="header__box">
+        <div class="logo">
+          <div class="logo__image">
+             <%= link_to "Ponstagram", root_path %>
           </div>
-        <% else %>
-          <div class="grid-6">
-            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+          <div class="logo__name">
           </div>
-        <% end %>
-      </div>
+        </div>
+        <div class="icon">
+          <div class="icon__post">
+            <% if user_signed_in? %>
+              <span><%= current_user.name %>
+                <ul>
+                  <li>
+                    <a href="/users/<%= current_user.id %>">マイページ</a>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                  </li>
+                </ul>
+              </span>
+              <a href="/images/new">投稿する</a>
+            <% else %>
+              <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+              <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+            <% end %>
+          </div>
+          <div class="icon__mypage">
+          </div>
+        </div>
+
     </header>
 
     <%= yield %>

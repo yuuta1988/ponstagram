@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   devise_for :users
   resources :users, only: [:show, :index]
   root    'images#index'
@@ -8,4 +12,5 @@ Rails.application.routes.draw do
   post "likes/:image_id/create" => "likes#create"
   post "likes/:image_id/destroy" => "likes#destroy"
   get "users/:id/likes" => "users#likes"
+  resources :relationships, only: [:create, :destroy]
 end

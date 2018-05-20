@@ -1,0 +1,7 @@
+<h2>ユーザー</h2>
+<% @users.each do |user| %>
+  <div>
+    <%= user.name %>
+    <%= render 'follow_form', user: user %>
+  </div>
+<% end %>

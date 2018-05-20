@@ -16,6 +16,7 @@ gem 'sprockets', '2.11.0'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'byebug'

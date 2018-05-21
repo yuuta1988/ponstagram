@@ -27,9 +27,12 @@
       <div class="header__box">
         <div class="logo">
           <div class="logo__image">
-             <%= link_to "Ponstagram", root_path %>
+            <%= link_to root_path do %>
+              <i class="fa fa-instagram fa-2x"></i>
+            <% end %>
           </div>
           <div class="logo__name">
+            <span>Ponstagram</span>
           </div>
         </div>
         <div class="icon">
@@ -50,6 +53,12 @@
             <% end %>
           </div>
           <div class="icon__mypage">
+            <%= link_to user_path(current_user.id) do %>
+              <i class="fa fa-user fa-2x"></i>
+            <% end %>
+            <%= link_to new_image_path do %>
+              <i class="fa fa-camera fa-2x"></i>
+            <% end %>
           </div>
         </div>
 

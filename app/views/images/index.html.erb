@@ -1,5 +1,18 @@
 <div class="contents row" >
   <% @images.each do |image| %>
+    <div class="contents__header">
+      <div class="contents__header__img">
+        <%= link_to image_tag("#{image.user.image}", class: "img"), "/users/#{image.user.id}" %>
+      </div>
+      <div class="contents__header__name">
+        <%= link_to image.user.name , "/users/#{image.user.id}" %>
+      </div>
+      <div class="contents__header__icon">
+        <%= link_to "/images/#{image.id}", method: :get do %>
+          <i class="fa fa-gear fa-2x icon"></i>
+        <% end %>
+      </div>
+    </div>
     <div class="content_post" style="background-image: url(<%= image.image %>);">
         <div class="more">
           <span>削除編集</span>

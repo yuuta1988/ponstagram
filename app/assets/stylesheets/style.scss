@@ -40,16 +40,12 @@ body,html {
   background-color: $lightGray;
 }
 
-body {
-  padding-top: 60px;
-}
-
 h1,h2,h3,h4,h5,h6,body {
 line-height: 1.57;
   letter-spacing: 0.15em;
   font-size: 16px;
   color: $dark;
-  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+  // font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   margin: 0;
 }
 
@@ -120,7 +116,7 @@ h1,h2,h3,h4,h5,h6 {
   background: url(https://dl.dropboxusercontent.com/u/5840617/DeathtoStock_Wired3.jpg);
   background-size: cover;
   .contents {
-    position: absolute;
+    // position: absolute;
     left: 0;
     top: 30%;
     bottom: 0;
@@ -128,6 +124,33 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 div.contents.row {
+  padding-top: 20px;
+  .contents__header  {
+    background-color: white;
+    height: 50px;
+    line-height: 50px;
+    .contents__header__img{
+      height: 50px;
+      width: 10%;
+      padding-left: 10px;
+      position: relative;
+      float: left;
+      .img {
+        height: 80%;
+        width: 80%;
+      }
+    }
+    .contents__header__name{
+      float: left;
+    }
+    .contents__header__icon{
+      float: right;
+      .icon {
+        vertical-align: middle;
+        padding-right: 10px;
+      }
+    }
+  }
   h2 {
     @include boxBase(20px 0, 0);
     font-weight: normal;
@@ -141,7 +164,7 @@ div.contents.row {
   font-family: "游ゴシック", "YuGothic";
   }
   div.content_post {
-    @include boxBase(20px 0 ,30px);
+    margin-bottom: 30px;
     position: relative;
     height: 400px;
     color: #fff;

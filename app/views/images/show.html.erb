@@ -48,6 +48,9 @@
             <%= comment.text %>
             <% if user_signed_in? && current_user.id == comment.user_id %>
               <p><%= link_to '削除する',  [@image, comment], method: :delete %></p>
+              <%= link_to [@image, comment], method: :delete do %>
+                <i class="fa fa-trash-o fa-2x"></i>
+              <% end %>
             <% end %>
           </p>
         <% end %>

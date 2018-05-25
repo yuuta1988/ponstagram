@@ -25,12 +25,6 @@
       </div>
   </div>
   <div class="content_post" style="background-image: url(<%= @image.image %>);">
-    <%= simple_format(@image.text) %>
-    <span class="name">
-      <a href="/users/<%= @image.user.id %>">
-        <span>投稿者</span><%= @image.user.name %>
-      </a>
-    </span>
   </div>
   <div class="container">
     <% if Like.find_by(user_id: @current_user.id, image_id: @image.id) %>

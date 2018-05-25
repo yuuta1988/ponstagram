@@ -205,8 +205,9 @@ div.contents.row {
     .more {
       position: absolute;
       cursor: pointer;
-      top: 20px;
-      right: 30px;
+      // top: 20px;
+      // padding-top: 30px;
+      right: 0;
       z-index: 2;
       height: 100px;
       width: 80px;
@@ -216,7 +217,7 @@ div.contents.row {
       }
       ul.more_list {
         position: absolute;
-        text-align: left;
+        text-align: center;
         width: 80px;
         right: 0;
         font-size: 12px;
@@ -234,10 +235,10 @@ div.contents.row {
             display: block;
             padding: 5px;
             // どこに関与しているかわからない
-            // &:hover {
-            //   background-color: $accent;
-            //   color: #fff;
-            // }
+            &:hover {
+              background-color: $dark;
+              color: $white;
+            }
           }
         }
       }

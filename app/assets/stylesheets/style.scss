@@ -144,21 +144,20 @@ div.contents.row {
   padding-top: 20px;
   .contents__header  {
     background-color: white;
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
     .contents__header__img{
-      height: 50px;
-      width: 10%;
       padding-left: 10px;
       position: relative;
       float: left;
       .img {
-        height: 80%;
-        width: 80%;
+        height: 50px;
+        width: 50px;
       }
     }
     .contents__header__name{
       float: left;
+      padding-left: 20px;
     }
     .contents__header__icon{
       float: right;

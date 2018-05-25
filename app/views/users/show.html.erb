@@ -1,4 +1,7 @@
 <div class="contents row" >
+
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+
   <ul class="user-tabs">
     <li><%= link_to("いいね!一覧", "/users/#{@user.id}/likes") %></li>
   </ul>

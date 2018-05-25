@@ -49,9 +49,6 @@
                     <i class="fa fa-user fa-2x"></i>
                   <% end %>
                 </li>
-                <li>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                </li>
               </ul>
             <% else %>
               <%= link_to "ログイン", new_user_session_path, class: 'post' %>

@@ -45,12 +45,18 @@
 
     <%= @likes_count %>
 
+    <div class="text">
+      <h4>＜投稿＞</h4>
+        <%= simple_format(@image.text) %>
+    </div>
+
     <% if current_user %>
       <%= form_tag("/images/#{@image.id}/comments", method: :post) do %>
         <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
         <input type="submit" value="SENT">
       <% end %>
     <% end %>
+
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
       <% if @comments %>

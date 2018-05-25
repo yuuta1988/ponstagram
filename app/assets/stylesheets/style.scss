@@ -353,8 +353,8 @@ form {
   box-sizing: border-box;
 }
 .text {
-      padding: 5px;
-    margin-top: 15px;
+  padding: 5px;
+  margin-top: 15px;
 }
 .comments {
   padding: 5px;
@@ -365,6 +365,9 @@ form {
     &:hover {
       text-decoration: underline;
     }
+  }
+  .fa-trash-o {
+    padding-left: 30px;
   }
 }
 

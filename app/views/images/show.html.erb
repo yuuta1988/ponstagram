@@ -9,7 +9,7 @@
       <div class="contents__header__dorpdawn">
         <% if user_signed_in? && current_user.id == @image.user_id %>
           <div class="contents__header__icon">
-            <i class="fa fa-bars fa-2x icon"></i>
+            <span class="fa fa-bars fa-2x icon"></span>
           </div>
           <div class="more">
             <ul class="more_list">
@@ -60,7 +60,7 @@
             <%= comment.text %>
             <% if user_signed_in? && current_user.id == comment.user_id %>
               <%= link_to [@image, comment], method: :delete do %>
-                <i class="fa fa-trash-o fa-2x"></i>
+                <i class="fa fa-trash-o"></i>
               <% end %>
             <% end %>
           </p>

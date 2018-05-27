@@ -1,0 +1,30 @@
+.user__header {
+  background-color: red;
+  .user__header__img {
+    background-color: green;
+  }
+  .user__header__right {
+    background-color: blue;
+    .header__right__top {
+      background-color: yellow;
+      .user__name {
+        background-color: white;
+      }
+      .user__edit {
+        background-color: gray;
+      }
+    }
+    .header__right__bottom {
+      background-color: green;
+      .follower {
+        background-color: red;
+      }
+      .followed {
+        background-color: blue;
+      }
+      .like {
+        background-color: yellow;
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 .user__header {
-  background-color: red;
   height: 300px;
   width: 100%;
   padding: 50px;
+  margin-bottom: 20px;
+  background-color: white;
   .user__header__img {
-    background-color: green;
     height: 200px;
     width: 200px;
     float: left;
@@ -15,45 +15,42 @@
   }
   .user__header__right {
     height: 200px;
-    width: 300px;
+    width: 350px;
     float: right;
     .header__right__top {
-      background-color: yellow;
       height: 100px;
-      width: 300px;
+      width: 100%;
       padding-top: 15px;
+      line-height: 70px;
+      text-align: center;
       .user__name {
-        background-color: white;
         height: 70px;
         width: 50%;
         float: left;
       }
       .user__edit {
-        background-color: gray;
         height: 70px;
         width: 50%;
         float: right;
       }
     }
     .header__right__bottom {
-      background-color: green;
       height: 100px;
       width: 100%;
       padding-top: 15px;
+      line-height: 70px;
+      text-align: center;
       .follower {
-        background-color: white;
         height: 70px;
         width: 33.3%;
         float: left;
       }
       .followed {
-        background-color: blue;
         height: 70px;
         width: 33.3%;
         float: left;
       }
       .like {
-        background-color: yellow;
         height: 70px;
         width: 33.3%;
         float: left;

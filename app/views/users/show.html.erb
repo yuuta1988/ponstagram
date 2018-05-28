@@ -1,36 +1,45 @@
 <div class="contents row" >
-  <% @images.each do |image| %>
 
     <div class="user__header">
       <div class="user__header__img">
-        <%= image_tag "#{image.user.image}", class: "img" %>
+        <%= image_tag "#{@user.image}", class: "img" %>
       </div>
       <div class="user__header__right">
         <div class="header__right__top">
           <div class="user__name">
+            <%= @user.name %>
           </div>
           <div class="user__edit">
+            <% if user_signed_in? && current_user.id == @user.id %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <% end %>
           </div>
         </div>
         <div class="header__right__bottom">
           <div class="follower">
+            フォロー
           </div>
           <div class="followed">
+            フォロワー
           </div>
           <div class="like">
+            <%= link_to("いいね!", "/users/#{@user.id}/likes") %>
           </div>
         </div>
       </div>
     </div>
 
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <% @images.each do |image| %>
 
-    <ul class="user-tabs">
-      <li><%= link_to("いいね!一覧", "/users/#{@user.id}/likes") %></li>
-    </ul>
-    <p><%= @name %>さんの投稿一覧</p>
-      <div class="content_post" style="background-image: url(<%= image.image %>);">
-        <%= simple_format(image.text) %>
+    <div class="contents__header">
+      <div class="contents__header__icon">
+        <%= link_to "/images/#{image.id}", method: :get do %>
+          <i class="fa fa-external-link-square fa-2x icon"></i>
+        <% end %>
       </div>
+    </div>
+
+    <div class="content_post" style="background-image: url(<%= image.image %>);">
+    </div>
   <% end %>
 </div>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   resources :users do
     member do
-     get :follow, :followed
+     get :follower, :followed
     end
   end
   root    'images#index'

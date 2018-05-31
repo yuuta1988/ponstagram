@@ -15,4 +15,14 @@ class UsersController < ApplicationController
     @likes = Like.where(user_id: @user.id)
   end
 
+  def follower
+    @user  = User.find(params[:id])
+    render 'show_follower'
+  end
+
+  def followed
+    @user  = User.find(params[:id])
+    render 'show_followed'
+  end
+
 end

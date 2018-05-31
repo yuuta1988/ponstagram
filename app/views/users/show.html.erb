@@ -11,7 +11,7 @@
           </div>
           <div class="user__edit">
             <% if user_signed_in? && current_user.id == @user.id %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
             <% end %>
           </div>
         </div>

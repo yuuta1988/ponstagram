@@ -1,5 +1,5 @@
 .follow {
-  background-color: red;
+  background-color: white;
   height: 80px;
   line-height: 80px;
   margin-bottom: 20px;
@@ -19,6 +19,7 @@
   }
   .follow__btn {
     float: right;
+    padding-right: 10px;
     .btn {
     }
   }

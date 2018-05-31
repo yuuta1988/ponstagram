@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Ponstagram</title>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= csrf_meta_tags %>
     <script type="text/javascript">
@@ -27,40 +27,39 @@
       <div class="header__box">
         <div class="logo">
           <div class="logo__image">
-             <%= link_to "Ponstagram", root_path %>
+            <%= link_to root_path do %>
+              <i class="fa fa-instagram fa-2x"></i>
+            <% end %>
           </div>
           <div class="logo__name">
+            <span>Ponstagram</span>
           </div>
         </div>
-        <div class="icon">
-          <div class="icon__post">
+        <ul class="header__lists">
+          <li class="list">
             <% if user_signed_in? %>
-              <span><%= current_user.name %>
-                <ul>
-                  <li>
-                    <a href="/users/<%= current_user.id %>">マイページ</a>
-                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                  </li>
-                </ul>
-              </span>
-              <a href="/images/new">投稿する</a>
+              <ul>
+                <li class="list">
+                  <%= link_to new_image_path do %>
+                    <i class="fa fa-camera fa-2x"></i>
+                  <% end %>
+                </li>
+                <li class="list">
+                  <%= link_to user_path(current_user.id) do %>
+                    <i class="fa fa-user fa-2x"></i>
+                  <% end %>
+                </li>
+              </ul>
             <% else %>
               <%= link_to "ログイン", new_user_session_path, class: 'post' %>
               <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
             <% end %>
-          </div>
-          <div class="icon__mypage">
-          </div>
-        </div>
+          </li>
+        </ul>
 
     </header>
 
     <%= yield %>
 
-    <footer>
-      <p>
-        Pomstagram 2014.
-      </p>
-    </footer>
   </body>
 </html>

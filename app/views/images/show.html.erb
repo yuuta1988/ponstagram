@@ -1,24 +1,30 @@
 <div class ="contents row">
+  <div class="contents__header">
+      <div class="contents__header__img">
+        <%= link_to image_tag("#{@image.user.image}", class: "img"), "/users/#{@image.user.id}" %>
+      </div>
+      <div class="contents__header__name">
+        <%= link_to @image.user.name , "/users/#{@image.user.id}" %>
+      </div>
+      <div class="contents__header__dorpdawn">
+        <% if user_signed_in? && current_user.id == @image.user_id %>
+          <div class="contents__header__icon">
+            <span class="fa fa-bars fa-2x icon"></span>
+          </div>
+          <div class="more">
+            <ul class="more_list">
+              <li>
+                <%= link_to '編集', "/images/#{@image.id}/edit", method: :get %>
+              </li>
+              <li>
+                <%= link_to '削除', "/images/#{@image.id}", method: :delete %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+  </div>
   <div class="content_post" style="background-image: url(<%= @image.image %>);">
-    <% if user_signed_in? && current_user.id == @image.user_id %>
-      <div class="more">
-      <span>削除編集</span>
-      <ul class="more_list">
-        <li>
-          <%= link_to '編集', "/images/#{@image.id}/edit", method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', "/images/#{@image.id}", method: :delete %>
-        </li>
-      </ul>
-    </div>
-    <% end %>
-    <%= simple_format(@image.text) %>
-    <span class="name">
-      <a href="/users/<%= @image.user.id %>">
-        <span>投稿者</span><%= @image.user.name %>
-      </a>
-    </span>
   </div>
   <div class="container">
     <% if Like.find_by(user_id: @current_user.id, image_id: @image.id) %>
@@ -33,12 +39,18 @@
 
     <%= @likes_count %>
 
+    <div class="text">
+      <h4>＜投稿＞</h4>
+        <%= simple_format(@image.text) %>
+    </div>
+
     <% if current_user %>
       <%= form_tag("/images/#{@image.id}/comments", method: :post) do %>
         <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
         <input type="submit" value="SENT">
       <% end %>
     <% end %>
+
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
       <% if @comments %>
@@ -47,7 +59,9 @@
             <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
             <%= comment.text %>
             <% if user_signed_in? && current_user.id == comment.user_id %>
-              <p><%= link_to '削除する',  [@image, comment], method: :delete %></p>
+              <%= link_to [@image, comment], method: :delete do %>
+                <i class="fa fa-trash-o"></i>
+              <% end %>
             <% end %>
           </p>
         <% end %>

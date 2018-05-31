@@ -1,17 +1,5 @@
 @import "compass";
 
-/*
- * "ほのか明朝" licensed under the IPA Font License Agreement v1.0
- * http://fontfree.me/966（配布元のURL）
- * http://ipafont.ipa.go.jp/（IPAフォントのURL）
- * http://ipafont.ipa.go.jp/ipa_font_license_v1.html（IPAフォントライセンスv1.0のURL）
- */
-// @font-face {
-//     font-family: 'ほのか明朝';
-//     src: url('font_1_honokamin.ttf') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-// }
 
 $accent: #57C3E9;
 $black: #292929;
@@ -44,7 +32,6 @@ line-height: 1.57;
   letter-spacing: 0.15em;
   font-size: 16px;
   color: $dark;
-  // font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   margin: 0;
 }
 
@@ -52,10 +39,6 @@ a {
   text-decoration: none;
   color: $dark;
   @extend .transition;
-  // フォントの色を変えている
-  // &:hover {
-  //   color: $accent;
-  // }
 }
 
 .bold {
@@ -79,21 +62,6 @@ a {
   @include transition-duration(0.2s);
   @include transition-timing-function(linear);
 }
-
-// .btn {
-//     @include basePadding(8px 20px);
-//     font-size: 14px;
-//     border: 2px solid $accent;
-//     color: $accent;
-//     font-weight: bold;
-//     text-align: center;
-//     border-radius: 3px;
-//     display: inline-block;
-//   &:hover {
-//     border-color: lighten($accent, 15%);
-//     color: lighten($accent, 15%);
-//   }
-// }
 
 .square_btn{
     text-decoration: none;
@@ -133,7 +101,6 @@ h1,h2,h3,h4,h5,h6 {
   background: url(https://dl.dropboxusercontent.com/u/5840617/DeathtoStock_Wired3.jpg);
   background-size: cover;
   .contents {
-    // position: absolute;
     left: 0;
     top: 30%;
     bottom: 0;
@@ -200,47 +167,6 @@ div.contents.row {
       z-index: 1;
       border-radius: 3px;
     }
-    // .more {
-    //   position: absolute;
-    //   cursor: pointer;
-    //   // top: 20px;
-    //   // padding-top: 30px;
-    //   right: 0;
-    //   z-index: 2;
-    //   height: 100px;
-    //   width: 80px;
-    //   text-align: right;
-    //   &:hover ul.more_list {
-    //     display: block;
-    //   }
-    //   ul.more_list {
-    //     position: absolute;
-    //     text-align: center;
-    //     width: 80px;
-    //     right: 0;
-    //     font-size: 12px;
-    //     background-color: #fff;
-    //     border: 1px solid #ddd;
-    //     display: none;
-    //     box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    //     border-radius: 3px;
-    //     li {
-    //       border-bottom: 1px solid #ddd;
-    //       &:last-child {
-    //         border-bottom: 0;
-    //       }
-    //       a {
-    //         display: block;
-    //         padding: 5px;
-    //         // どこに関与しているかわからない
-    //         &:hover {
-    //           background-color: $dark;
-    //           color: $white;
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
     p {
       @extend .serif;
       position: absolute;
@@ -307,9 +233,6 @@ form {
     color: #fff;
     border: 0;
     font-size: 18px;
-    // &:hover {
-    //   background-color: lighten($accent, 10%);
-    // }
   }
 }
 .container {
@@ -326,8 +249,6 @@ form {
   padding: 5px;
   margin-top: 15px;
   a {
-    // aタグの色を水色
-    // color: $accent;
     &:hover {
       text-decoration: underline;
     }
@@ -343,8 +264,6 @@ form {
   .more {
     position: absolute;
     cursor: pointer;
-    // top: 20px;
-    // padding-top: 30px;
     right: 0;
     z-index: 2;
     height: 100px;
@@ -372,7 +291,6 @@ form {
         a {
           display: block;
           padding: 5px;
-          // どこに関与しているかわからない
           &:hover {
             background-color: $dark;
             color: $white;

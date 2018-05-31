@@ -1,0 +1,25 @@
+.follow {
+  background-color: white;
+  height: 80px;
+  line-height: 80px;
+  margin-bottom: 20px;
+  .follow__img {
+    padding-left: 10px;
+    position: relative;
+    float: left;
+    .img {
+      height: 60px;
+      width: 60px;
+    }
+  }
+  .follow__name {
+    float: left;
+    padding-left: 20px;
+  }
+  .follow__btn {
+    float: right;
+    padding-right: 10px;
+    .btn {
+    }
+  }
+}

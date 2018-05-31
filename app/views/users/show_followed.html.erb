@@ -1,0 +1,12 @@
+<div class="contents row" >
+  <% @user.followers.each do |user| %>
+    <div class="follow">
+      <div class="follow__img">
+        <%= link_to image_tag("#{user.image}", class: "img"), "/users/#{user.id}" %>
+      </div>
+      <div class="follow__name">
+        <%= link_to user.name , "/users/#{user.id}" %>
+      </div>
+    </div>
+  <% end %>
+</div>

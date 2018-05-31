@@ -10,17 +10,17 @@
             <%= @user.name %>
           </div>
           <div class="user__edit">
-            <% if user_signed_in? && current_user.id == @user.id %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <% if current_user.id == @user.id %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
             <% end %>
           </div>
         </div>
         <div class="header__right__bottom">
           <div class="follower">
-            フォロー
+            <%= link_to "フォロー", "/users/#{@user.id}/follower" %>
           </div>
           <div class="followed">
-            フォロワー
+            <%= link_to "フォロワー", "/users/#{@user.id}/followed" %>
           </div>
           <div class="like">
             <%= link_to("いいね!", "/users/#{@user.id}/likes") %>

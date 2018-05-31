@@ -1,15 +1,31 @@
 <% unless current_user?(user) %>
-  <div id="follow_form_<%= user.id %>">
-    <%= user.name %>
+  <div id="follow_form_<%= user.id %>" class="follow">
     <% unless current_user.following?(user) %>
-      <%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>
-        <%= f.hidden_field :followed_id %>
-        <%= f.submit "フォロー" %>
-      <% end %>
+      <div class="follow__img">
+        <%= link_to image_tag("#{user.image}", class: "img"), "/users/#{user.id}" %>
+      </div>
+      <div class="follow__name">
+        <%= link_to user.name , "/users/#{user.id}" %>
+      </div>
+      <div class="follow__btn">
+        <%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>
+          <%= f.hidden_field :followed_id %>
+          <%= f.submit "フォローする", class: "btn" %>
+        <% end %>
+      </div>
     <% else %>
-      <%= form_for(current_user.relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
-        <%= f.submit "つながりを解除" %>
-      <% end %>
+      <div class="follow__img">
+        <%= link_to image_tag("#{user.image}", class: "img"), "/users/#{user.id}" %>
+      </div>
+      <div class="follow__name">
+        <%= link_to user.name , "/users/#{user.id}" %>
+      </div>
+      <div class="follow__btn">
+        <%= form_for(current_user.relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
+          <%= f.submit "フォロー解除" %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 <% end %>
+

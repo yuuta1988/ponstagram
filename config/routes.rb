@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, only: [:show, :index]
+  resources :users do
+    member do
+     get :follower, :followed
+    end
+  end
   root    'images#index'
   resources :images do
     resources :comments, only: [:create, :destroy]

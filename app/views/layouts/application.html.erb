@@ -49,6 +49,11 @@
                     <i class="fa fa-user fa-2x"></i>
                   <% end %>
                 </li>
+                <li class="list">
+                  <%= link_to users_path do %>
+                    <i class="fa fa-users fa-2x"></i>
+                  <% end %>
+                </li>
               </ul>
             <% else %>
               <%= link_to "ログイン", new_user_session_path, class: 'post' %>

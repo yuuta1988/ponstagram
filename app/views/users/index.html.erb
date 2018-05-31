@@ -1,7 +1,5 @@
-<h2>ユーザー</h2>
-<% @users.each do |user| %>
-  <div>
-
+<div class="contents row" >
+  <% @users.each do |user| %>
     <%= render 'follow_form', user: user %>
-  </div>
-<% end %>
+  <% end %>
+</div>

@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: ponstagram_production
-  username: ponstagram
+  database: heroku_d9143d654f3e664
+  username: b70c124158601f
   password: <%= ENV['PONSTAGRAM_DATABASE_PASSWORD'] %>

@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: heroku_d9143d654f3e664
-  username: b70c124158601f
-  password: <%= ENV['PONSTAGRAM_DATABASE_PASSWORD'] %>
+  database: heroku_2379d2d36431f68
+  username: b8b67572c0a4b6
+  password: <%= ENV['DATABASE_PASSWORD'] %>

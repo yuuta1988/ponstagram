@@ -15,7 +15,7 @@ gem 'sprockets', '2.11.0'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 gem 'rails_12factor', group: :production
 

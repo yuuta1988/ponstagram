@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.1'
 
 gem 'rails', '4.2.6'
 gem 'mysql2', '0.3.18'
@@ -27,4 +27,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+
 

@@ -16,6 +16,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'therubyracer', platforms: :ruby
+gem 'cloudinary'
 
 gem 'rails_12factor', group: :production
 

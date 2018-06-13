@@ -16,7 +16,11 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'therubyracer', platforms: :ruby
+<<<<<<< HEAD
 gem 'fog'
+=======
+gem 'cloudinary'
+>>>>>>> origin/master
 
 gem 'rails_12factor', group: :production
 
